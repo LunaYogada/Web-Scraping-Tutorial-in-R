@@ -64,12 +64,12 @@ download_google_img <- function(keyword_search,image_num = 50,scroll_times = 1,
             cropped_img <- image_trim(image_read(temp_img))
             #save image in tmp_img file
             image_write(cropped_img,path = str_c("tmp_img/",keyword_search,"_",i,".png"),format = "png")
-            Sys.sleep(round(runif(1,min = 1, max = 3)))
+            Sys.sleep(round(runif(1,min = 2, max = 4)))
         },
         error = function(x){
             x <- i
             missed_imgs <<- append(missed_imgs,x)
-            message("image ",x," missing")
+            message(keyword_search," image ",x," missing")
         })
     }
     #currently have some bugs
