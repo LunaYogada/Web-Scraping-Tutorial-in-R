@@ -64,7 +64,7 @@ As a typical R user, most of the times, I only want to find something easy and w
 4. Using regular expression while web-scrapping
 5. How to use CSS Selector
 6. Simulate clicks on elements
-7. Type into text tbox
+7. Type into text box
 1. How to login accounts
 8. How to download images
 1. How to prevent errors from breaking loops(tryCatch)
