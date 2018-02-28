@@ -8,7 +8,7 @@ As a typical R user, most of the times, I only want to find something easy and w
 
 ### This tutorial covers:
 
-+ How to scrape almost all websites
++ How to scrape almost any websites
 + How to scrape protected, live or Javascript genereted content
 + How to simulate clicks, scroll-downs, login, entering texts and etc.
 + How to automate web-scrapping process
