@@ -33,10 +33,11 @@ As a typical R user, most of the times, I only want to find something easy and w
 
 ## Create your first scraper
 
-+ A simple scrapper that scrapes Pikachu's information
++ A simple scrapper that scrapes Pikachu's stat
 
 ## Simple Scrapping Using rvest
 
++ One step above: Scrape all pokemons' stats
 + Scrape IMDB movie data(The tutorial I read and found very useful)
 + Scrape heroes' data from Heros of the Storm
 
