@@ -28,7 +28,7 @@ As a typical R user, most of the times, I only want to find something easy and w
 + Knowledge of HTML, CSS, Javascript and regular expression is preferable but not required
 + Understanding of basic R
 + Required packages(tidyverse, stringr, rvest, RSelenium, seleniumPipes)
-+ Other requirements(CSS SelectorGadget, Chrome)
++ Other requirements(CSS SelectorGadget, Chrome)  
 (Learning resources are inside the links)
 
 ## Create your first scraper
