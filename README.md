@@ -37,7 +37,7 @@ As a typical R user, most of the times, I only want to find something easy and w
 
 ## Simple Scrapping Using rvest
 
-+ One step above: Scrape all pokemons' stats
++ One step ahead: Scrape all pokemons' stats
 + Scrape IMDB movie data(The tutorial I read and found very useful)
 + Scrape heroes' data from Heros of the Storm
 
