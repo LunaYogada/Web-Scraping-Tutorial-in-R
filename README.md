@@ -37,15 +37,17 @@ As a typical R user, most of the times, I only want to find something easy and w
 
 ## Simple Scrapping Using rvest
 
-+ One step ahead: Scrape all pokemons' stats
++ One step ahead: scrape all pokemons' stats
 + Scrape IMDB movie data(The tutorial I read and found very useful)
 + Scrape heroes' data from Heros of the Storm
 
-## Transform and Store Scrapping Results
+## Clean, Transform and Store Scrapping Results
+
++ Another step ahead: scrape all pokemon's stats and store their iamges
 
 ## Scraping using RSelelenium and seleniumPipes(Scraping Javascript Generated Values)
 
-+ Scrape Job information
++ Scrape Job information 
 
 ## Case studies
 
