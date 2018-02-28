@@ -15,7 +15,7 @@ As a typical R user, most of the times, I only want to find something easy and w
 + How to clean, transform and store web-scrapping results
 
 
-### This tutorial doest not cover:
+### This tutorial does not cover:
 
 + **Product level web-scrapping script** 
 + **Techniques about avoiding anti-scaping systems:** e.g. CAPTCHA
