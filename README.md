@@ -4,29 +4,36 @@
 
 ## Introduction
 
-As a typical R user, most of the times, I don't care too much about the details, and I only want to find something easy and works. However, by the time I wrote this tutorial, I found many materials on the internet about web-scraping using R were out-dated, and it made my life very hard. So after I read tons of blogs, Stack Overflow answers, and package documents, I think I need to create tutorials to make your lives much more comfortable.
+As a typical R user, most of the times, I only want to find something easy and works. However, by the time I wrote this tutorial, I found many materials on the internet about web-scraping using R were out-dated, and it made my life really hard. So after I read tons of blogs, Stack Overflow answers, and package documents, I think I need to create tutorials to make your lives much more comfortable.
 
 ## Some Fundamentals
 
-+ Knowledge of HTML, CSS, and Javascript is preferable but not required
++ Knowledge of HTML, CSS, Javascript and regular expression is preferable but not required
 + Understanding of basic R
 + Required packages(tidyverse, stringr, rvest, RSelenium, seleniumPipes)
-+ Required gadgets(CSS SelectorGadget, chrome)
++ Other requirements(CSS SelectorGadget, Chrome)
+(Learning resources are inside the links)
 
-## Creating your first scraper
+## Create your first scraper
+
++ A simple scrapper that scrapes Pikachu's information
+
+## Simple Scrapping using rvest
+
+## Transform and Store Scrapping Results
 
 ## Case studies
 
 1. Scrape heroes' data of Heroes of the Storm
 2. Scrape Google search results
 1. Scrape Google images
-3. Scrape Twitch without API
+3. Scrape Twitch
 
 
 ## Quick Lookup Table
 
-**The followings are examples of dealing with specific web-scraping tasks.**  
-(You can suggest more specific use cases, I'll add them here if I know how to do that.)
+**The followings are simple examples of dealing with specific web-scraping tasks.**  
+(You can suggest more specific use cases, I'll add them here if I know how to do them.)
 
 1. Use loops for automatic scrapping
 1. How to scrape tables
@@ -40,5 +47,8 @@ As a typical R user, most of the times, I don't care too much about the details,
 8. How to download images
 1. How to screenshot
 1. How to scroll down
+1. How to jump to another page
+1. How to go back/forward
 1. Control scrapping speed
+1. Find alternatives if it's too hard
 1. Think outside of the box
