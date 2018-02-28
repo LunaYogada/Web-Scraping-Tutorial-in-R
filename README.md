@@ -11,10 +11,17 @@ As a typical R user, most of the times, I don't care too much about the details,
 + Knowledge of HTML, CSS, and Javascript is preferable but not required
 + Understanding of basic R
 + Required packages(tidyverse, stringr, rvest, RSelenium, seleniumPipes)
++ Required gadgets(CSS SelectorGadget, chrome)
 
 ## Creating your first scraper
 
-## 
+## Case studies
+
+1. Scrape heroes' data of Heroes of the Storm
+2. Scrape Google search results
+1. Scrape Google images
+3. Scrape Twitch without API
+
 
 ## Quick Lookup Table
 
@@ -23,15 +30,15 @@ As a typical R user, most of the times, I don't care too much about the details,
 
 1. Use loops for automatic scrapping
 1. How to scrape tables
+1. Scrape protected email addresses
 2. Scrape Javascript generated values
 3. Scrape tables with live content(iframe).
 4. Using regular expression while web-scrapping
-5. Use CSS Selector
+5. How to use CSS Selector
 6. Simulate clicks on elements
 7. Type into text tbox
 8. How to download images
 1. How to screenshot
 1. How to scroll down
-1. Think outside of the box
 1. Control scrapping speed
-1. When nothing works, don't give up.
+1. Think outside of the box
