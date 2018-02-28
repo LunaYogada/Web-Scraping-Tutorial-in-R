@@ -9,8 +9,10 @@ As a typical R user, most of the times, I only want to find something easy and w
 ### This tutorial covers:
 
 + How to scrape almost all websites
++ How to scrape protected, live or Javascript genereted content
++ How to simulate clicks, scroll-downs, enter texts in text box and so on 
 + How to automate web-scrapping process
-+ How to store web-scrapping results
++ How to clean, transform and store web-scrapping results
 
 
 ### This tutorial doest not cover:
