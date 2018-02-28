@@ -18,7 +18,7 @@ As a typical R user, most of the times, I only want to find something easy and w
 ### This tutorial does not cover:
 
 + **Product level web-scrapping script** 
-+ **How to avoiding anti-scaping systems:** e.g. CAPTCHA
++ **How to avoiding anti-scraping systems:** e.g. CAPTCHA
 + **How to use API**
 + **Scraping well protected websites:** e.g. Amazon(Denpending on your scraping speed, you will be detected after scraping several hundred or thousand items)
 
