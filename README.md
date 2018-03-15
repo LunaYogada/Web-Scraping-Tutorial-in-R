@@ -33,7 +33,7 @@ As a typical R user, most of the times, I only want to find something easy and w
 
 ## Create your first scraper
 
-+ A simple scrapper that scrapes Pikachu's stat
++ [A simple scrapper that scrapes Pikachu's stat](https://yifu-yan.netlify.com/tutorial/a-simple-scrapper-that-scrapes-pikachu-s-stat/)
 
 ## Simple Scrapping Using rvest
 
