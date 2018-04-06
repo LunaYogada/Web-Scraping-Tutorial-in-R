@@ -79,30 +79,6 @@ download_google_img <- function(keyword_search,image_num = 50,scroll_times = 1,
         })
         
     }
-    #currently have some bugs
-    # #try to re-download missed pictures
-    # tried <- 0
-    # while (length(missed_imgs) > 0 & (tried <= try_times)) {
-    #    tryCatch({ for (img_no in missed_imgs) {
-    #        #go to missed img url
-    #        remDr %>% go(img_href[img_no])
-    #        #take screenshot
-    #        temp_img <- remDr %>% takeScreenshot(returnPNG = TRUE)
-    #        #render image
-    #        cropped_img <- image_trim(image_read(temp_img))
-    #        #save image in tmp_img file
-    #        image_write(cropped_img,path = str_c("tmp_img/",keyword_search,"_",img_no,".png"),format = "png")
-    #        #delete image number from missed images
-    #        missed_imgs <<- missed_imgs[-match(img_no,missed_imgs)]
-    #        Sys.sleep(round(runif(1,min = 1, max = 3)))
-    #    }},
-    #    error = function(x){
-    #        x <- img_no
-    #        message("image ",x,"still missing")
-    #    })
-    #     tried <<- tried + 1
-    # }
-    #delete sessions
     remDr %>% deleteSession()
     rD[["server"]]$stop() 
 }
