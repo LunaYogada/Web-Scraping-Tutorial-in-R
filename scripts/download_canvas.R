@@ -1,41 +1,71 @@
-library(rvest)
-library(RSelenium)
-library(seleniumPipes)
-library(stringr)
-
-#
-rD <- rsDriver (browser = 'chrome',chromever = "latest",port = 4445L)
-#open browser for selenium pipes
-remDr <- remoteDr(browserName = "chrome",port = 4445L)
-
-#go to canvas 
-remDr %>% go("https://canvas.ucdavis.edu")
-#login
-remDr %>% findElement(using = "css selector",value = "p~ p+ .marketing-highlight__cta--btn") %>% elementClick()
-#enter username and password
-remDr %>% findElement(using = "css selector",value = "#username") %>% elementSendKeys("yifyan")
-remDr %>% findElement(using = "css selector",value = "#password") %>% elementSendKeys("Mkntjbh@20070831")
-#click login
-remDr %>% findElement(using = "css selector",value = "#submit") %>% elementClick()
-
-#click the book ic-icon-svg--courses
-remDr %>% findElement(using = "css selector",value = ".ic-icon-svg--courses") %>% elementClick()
-#All visible text .ic-DashboardCard__header-subtitle
-visible_text <- remDr %>% getPageSource() %>% html_nodes(".ic-DashboardCard__header-subtitle") %>% html_text()
-#the course material I want to download
-course_number <- "443"
-link_text <- visible_text[str_detect(visible_text,pattern = course_number)]
-#the course material I want to download:
-remDr %>% findElement(using = "partial link text",value = link_text) %>% elementClick()
-
-#click files .files
-remDr %>% findElement(using = "css selector",value = ".files") %>% elementClick()
-Sys.sleep(2)
-#all items to click
-folders_to_click <- remDr %>% findElements(using = "css selector",value = ".ef-item-row")
-for(i in 1 : length(folders_to_click)){
-    #click the folder
-    folders_to_click[[1]] %>% elementClick()
-    #click download
-    remDr %>% findElement(using = "css selector",value = ".icon-download") %>% elementClick()
+download_from_canvas <- function(username,password,course_number,canvas_url="https://canvas.ucdavis.edu"){
+    #ckeck for required packages
+    required_packages <- c("rvest","RSelenium","stringr")
+    for(package in required_packages){
+        if (package %in% installed.packages()[,"Package"]) {
+            require(package,character.only = T)
+        } else {
+            message("install required package:",package)
+            install.packages(package)
+            require(package)
+        }
+    }
+    
+    #start server
+    rD <- rsDriver (browser = 'chrome',chromever = "latest",port = 4445L)
+    chrome_client <-rD$client
+    #go to canvas 
+    cat("default canvas url set to"," https://canvas.ucdavis.edu\n")
+    chrome_client$navigate(canvas_url)
+    #login
+    ele_login <- chrome_client$findElement(using = "css",value = "p~ p+ .marketing-highlight__cta--btn")
+    ele_login$clickElement()
+    #enter username and password
+    ele_username <- chrome_client$findElement(using = "css",value = "#username")
+    ele_username$sendKeysToElement(list(username))
+    ele_password <- chrome_client$findElement(using = "css",value = "#password")
+    ele_password$sendKeysToElement(list(password))
+    #click login
+    ele_login <- chrome_client$findElement(using = "css",value = "#submit")
+    ele_login$clickElement()
+    
+    #All visible text .ic-DashboardCard__header-subtitle
+    Sys.sleep(2)
+    dashboard_pagesource <- unlist(chrome_client$getPageSource())
+    Sys.sleep(2)
+    visible_text <- read_html(dashboard_pagesource) %>% html_nodes(".ic-DashboardCard__header-subtitle") %>% html_text()
+    #loop over courses
+    for(course in course_number){
+        #the course material I want to download
+        link_text <- visible_text[str_detect(visible_text,pattern = as.character(course))]
+        #the course material I want to download:
+        ele_course <- chrome_client$findElement(using = "partial",value = link_text)
+        ele_course$clickElement()
+        
+        #click files .files
+        ele_file <- chrome_client$findElement(using = "css",value = ".files")
+        ele_file$clickElement()
+        Sys.sleep(2)
+        #all items to click
+        ele_folders <- chrome_client$findElements(using = "css",value = ".ef-item-row")
+        
+        #hold control key
+        chrome_client$sendKeysToActiveElement(list(key = "control"))
+        for(ele_folder in ele_folders){
+            chrome_client$mouseMoveToLocation(webElement = ele_folder) 
+            chrome_client$click(0) 
+        }
+        #release control key
+        chrome_client$sendKeysToActiveElement(list(key = "control"))
+        #press download button icon-download
+        ele_download <- chrome_client$findElement(using = "css",value = ".icon-download")
+        ele_download$clickElement()
+        #goback twice
+        Sys.sleep(10)
+        replicate(2,chrome_client$goBack())
+    }
+    
+    #stop server
+    chrome_client$close()
+    rD$server$stop()
 }
