@@ -48,6 +48,7 @@ As a typical R user, most of the times, I only want to find something easy and w
 ## Scraping using RSelelenium and seleniumPipes(Scraping Javascript Generated Values)
 
 + Scrape Job information 
++ [Download files from canvas](https://github.com/yusuzech/Web-Scraping-Tutorial-in-R/blob/master/scripts/download_canvas.R)
 
 ## Case studies
 
